@@ -1,0 +1,25 @@
+{
+    "credentials": {
+        "clientId": "Enter_the_Application_Id_Here",
+        "tenantId": "Enter_the_Tenant_Info_Here",
+        "clientSecret": "Enter_the_Client_Secret_Here",
+        "cookieSecret": "Enter_Something_Juicy_And_Long_And_Random_And_Secure_Do_Not_Use_A_Password_Here"
+    },
+    "settings": {
+        "homePageRoute": "/home",
+        "redirectUri": "http://localhost:4545/redirect",
+        "postLogoutRedirectUri": "http://localhost:4545/",
+        "proxyMode": false
+    },
+    "policies": {
+        "signUpSignIn": {
+            "authority": "https://login.microsoftonline.com/consumers"
+        }
+    },
+    "discord": {
+        "clientId": "Enter_your_Client_Id_Here",
+        "clientSecret": "Enter_your_Client_Secret_Here",
+        "redirectUri": "http://localhost:4545/callback"
+    },
+    "restAPIKey": ""
+}

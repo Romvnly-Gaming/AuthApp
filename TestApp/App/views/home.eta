@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" status="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+        <%~ includeFile('./includes/seo'); %>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.1/css/bootstrap.min.css" integrity="sha512-T584yQ/tdRR5QwOpfvDfVQUidzfgc2339Lc8uBDtcp/wYu80d7jwBgAxbyMh0a9YM9F8N3tdErpFI8iaGx6x5g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Nunito+Sans:wght@300&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/style.css">
+        <title>Linking | Home</title>
+        <!--[if lt IE 9]>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/selectivizr/1.0.2/selectivizr-min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <%~ includeFile('./includes/navbar', {isAuthenticated: isAuthenticated}); %>
+        <div class="row" style="margin:auto" >
+            <div id="card-div" class="col-md-3">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <% if (session?.discord) { %>
+                            <img src="https://cdn.discordapp.com/avatars/<%=discordUser.id%>/<%=discordUser.avatar%>.webp" class="rotate rounded" />
+                            <h3 class="card-description">Welcome, <%~discordUser.username + "#" + discordUser.discriminator%>!</h3>
+                            <% if (session?.javaUser || session?.xboxUser) { %>
+                            <a class="btn btn-cool-blues btn-rounded btn-lg" href="/link" role="button" color="white">Start linking</a>
+                            </br>
+                            </br>
+                            <% } %>
+                            <a class="btn btn-primary" href="/profile" role="button">Get my Discord profile</a>
+                            <a class="btn btn-primary" href="/xbox" role="button">Get my Xbox profile</a>
+                            <a class="btn btn-primary" href="/java" role="button">Get my Java account</a>
+                        <% }  else { %>
+                            <h5 class="card-description">Link your Discord account to your Minecraft account, using Xbox Live. Made with 💘 (express & express-session)</h5>
+                            <p>Click the sign in button at the top to get started.</p>
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <%~ includeFile('./includes/footer', {isAuthenticated: isAuthenticated}); %>
+
+        <!-- importing bootstrap.js and supporting js libraries -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.slim.min.js" integrity="sha512-6ORWJX/LrnSjBzwefdNUyLCMTIsGoNP6NftMy2UAm1JBm6PRZCO1d7OHBStWpVFZLO+RerTvqX/Z9mBFfCJZ4A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.10.2/umd/popper.min.js" integrity="sha512-nnzkI2u2Dy6HMnzMIkh7CPd1KX445z38XIu4jG1jGw7x5tSL3VBjE44dY4ihMU1ijAQV930SPM12cCFrB18sVw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.1/js/bootstrap.min.js" integrity="sha512-UR25UO94eTnCVwjbXozyeVd6ZqpaAE9naiEUBK/A+QDbfSTQFhPGj5lOR6d8tsgbBk84Ggb5A3EkjsOgPRPcKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    </body>
+</html>

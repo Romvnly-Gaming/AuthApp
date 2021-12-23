@@ -1,0 +1,28 @@
+ <!-- OG Metadata -->
+  <meta
+   name="description"
+   content="Easy SMP's linking service!"
+  />
+  <meta
+   name="keywords"
+   content="Easy SMP, Easy SMP.com, Minecraft Server, Minecraft, Fun, Play, Portal, Website, Official"
+  />
+  <meta name="theme-color" content="#00b7ff" />
+  <!-- Browsers -->
+  <link rel="apple-touch-icon" sizes="180x180" href="https://test.2v1.me/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://test.2v1.me/favicon-32x32.png" />
+  <link
+   rel="icon"
+   type="image/png"
+   sizes="192x192"
+   href="https://test.2v1.me/android-chrome-192x192.png"
+  />
+  <link rel="icon" type="image/png" sizes="16x16" href="https://test.2v1.me/favicon-16x16.png" />
+  <link rel="manifest" href="https://test.2v1.me/site.webmanifest" />
+  <link rel="mask-icon" href="https://test.2v1.me/safari-pinned-tab.svg" color="#5bbad5" />
+  <link rel="shortcut icon" href="https://test.2v1.me/favicon.ico" />
+  <meta name="apple-mobile-web-app-title" content="Easy SMP" />
+  <meta name="application-name" content="Easy SMP" />
+  <meta name="msapplication-TileColor" content="#603cba" />
+  <meta name="msapplication-TileImage" content="https://test.2v1.me/mstile-144x144.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">

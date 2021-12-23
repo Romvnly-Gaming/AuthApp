@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" status="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.1/css/bootstrap.min.css" integrity="sha512-T584yQ/tdRR5QwOpfvDfVQUidzfgc2339Lc8uBDtcp/wYu80d7jwBgAxbyMh0a9YM9F8N3tdErpFI8iaGx6x5g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="/style.css">
+        <title>Profile</title>
+    </head>
+    <body>
+
+        <%~ includeFile('includes/navbar', {isAuthenticated: isAuthenticated}); %>
+
+        <div class="table-area-div">
+            <p>Calling <strong>Discord API</strong>...</p>
+            <ul>
+                <li><strong>resource:</strong> <mark>User</mark> object</li>
+                <li><strong>endpoint:</strong> <mark>/callback</mark></li>
+                <li><strong>scope:</strong> <mark>profile</mark></li>
+            </ul>
+            <p>Contents of the <strong>response</strong> is below:</p>
+        </div>
+
+        <div class="table-area-div">
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Key</th>
+                        <th scope="col">Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for (const [key, value] of Object.entries(profile)) { %>
+                        <tr>
+                            <td><%= key %></td>
+                            <td><%= value %></td>
+                        </tr>
+                    <% } %>
+                </tbody>
+            </table>
+        </div> 
+
+        <%~ includeFile('includes/footer'); %>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.slim.min.js" integrity="sha512-6ORWJX/LrnSjBzwefdNUyLCMTIsGoNP6NftMy2UAm1JBm6PRZCO1d7OHBStWpVFZLO+RerTvqX/Z9mBFfCJZ4A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.10.2/umd/popper.min.js" integrity="sha512-nnzkI2u2Dy6HMnzMIkh7CPd1KX445z38XIu4jG1jGw7x5tSL3VBjE44dY4ihMU1ijAQV930SPM12cCFrB18sVw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.1/js/bootstrap.min.js" integrity="sha512-UR25UO94eTnCVwjbXozyeVd6ZqpaAE9naiEUBK/A+QDbfSTQFhPGj5lOR6d8tsgbBk84Ggb5A3EkjsOgPRPcKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    </body>
+</html>

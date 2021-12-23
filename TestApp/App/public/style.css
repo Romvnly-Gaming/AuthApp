@@ -1,0 +1,75 @@
+body {
+    font-family: 'Nunito Sans', sans-serif;
+}
+h1 {
+    color: red;
+}
+
+#card-div {
+    min-width: 40%;
+    margin: 5% auto 5% auto;
+}
+
+#form-area-div {
+    width: 55%;
+    margin: 5% auto 5% auto;
+}
+
+.table-area-div {
+    width: 70%;
+    margin: 5% auto 5% auto;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.btn-cool-blues {
+    transition: all 0.2s;
+    background: #2193b0;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #6dd5ed, #2193b0);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #6dd5ed, #2193b0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: #fff;
+    border: 3px solid #eee;
+    font-family: 'Bangers';
+    font-size: 32px;
+}
+.btn-cool-blues:focus, .btn-cool-blues:hover {
+    border: 5px solid #81D9FF !important;
+    font-size: 40px;
+    color:white !important;
+}
+.btn-rounded {
+    border-radius: 15px;
+}
+.rotate {
+    animation: rotation 8s infinite linear;
+  }
+  
+  @keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+  }
+.rounded {
+    width:128px;
+    margin: 10px;
+    border-radius: 50% !important;
+}
+.card-img-top {
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
+}
+.img-shadow {
+    -moz-box-shadow: 5px 5px 5px #ccc;
+    -webkit-box-shadow: 5px 5px 5px #ccc;
+    box-shadow: 5px 5px 5px #ccc;
+}

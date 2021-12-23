@@ -1,0 +1,29 @@
+{
+  "name": "express-test-app",
+  "version": "1.0.0",
+  "description": "A Node.js & Express web app calling Microsoft Graph API using MSAL Node",
+  "private": true,
+  "main": "app.js",
+  "scripts": {
+    "start": "node App/app.js",
+    "dev": "nodemon App/app.js"
+  },
+  "author": "Romvnly-Gaming",
+  "license": "MIT",
+  "dependencies": {
+    "@xboxreplay/xboxlive-auth": "^4.0.0",
+    "axios": "^0.24.0",
+    "connect-redis": "^6.0.0",
+    "discord-oauth2": "^2.8.0",
+    "ejs": "^3.1.6",
+    "eta": "^1.12.3",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "msal-express-wrapper": "file:../",
+    "mysql2": "^2.3.3",
+    "redis": "^4.0.0",
+    "typeorm": "^0.2.41",
+    "uuid": "^8.3.2",
+    "uuid-tool": "^2.0.3"
+  }
+}

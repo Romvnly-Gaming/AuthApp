@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" status="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  <%~ includeFile('./includes/seo'); %>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css" integrity="sha512-GQGU0fMMi238uA+a/bdWJfpUGKUkBdgfFdgBm72SUQ6BeyWjoY/ton0tEjH+OSH9iP4Dfh+7HM0I9f5eR0L/4w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Nunito+Sans:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+    <title>Linking | Home</title>
+    <!--[if lt IE 9]>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/selectivizr/1.0.2/selectivizr-min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/aight/2.1.1/aight.min.js" integrity="sha512-WfUru+mqweHgCi7htg6o59/EFOVnKIXRdIb9nBRGHR+zyd1LlhroHYBZU2tbOFXuKkkOboe9aKn3WovQPWDkjw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/3.6.2/fetch.min.js" integrity="sha512-1Gn7//DzfuF67BGkg97Oc6jPN6hqxuZXnaTpC9P5uw8C6W4yUNj5hoS/APga4g1nO2X6USBb/rXtGzADdaVDeA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <![endif]-->
+      <script>
+      window.expressSession = {
+      xboxUser: <%~JSON.stringify(session.xboxUser)%>
+      javaUser: <%~JSON.stringify(session.javaUser)%>
+      }
+      </script>
+</head>
+
+<body>
+  <%~ includeFile('./includes/navbar', {isAuthenticated: isAuthenticated}); %>
+    <div class="row" style="margin:auto">
+      <div id="card-div" class="col-md-3">
+        <div class="card text-center">
+          <div class="card-body">
+            <p class="card-text">Click the following buttons link to your Discord account (<b><%=discordUser.tag%></b>)</p>
+            <% if (session.javaUser) { %>
+                  <div class="card mb-3">
+  <div class="row g-0">
+    <div class="col-md-16">
+      <div class="card-body">
+        <img src="https://api.tydiumcraft.net/skin?uuid=<%=session.javaUser.uuid%>&type=avatar" class="img-fluid rounded-start img-shadow" alt="Bedrock Avatar">
+        <h5 class="card-title"><%=session.javaUser.name%></h5>
+        <button onclick="link('java', this)" class="btn btn-primary" id="javaButton"><%=session.javaUser.isLinked ? 'LINKED' : 'LINK' %></button>
+      </div>
+    </div>
+  </div>
+</div>
+              <% } %>
+                <% if (session.xboxUser) { %>
+                  </br>
+                  <div class="card mb-3">
+  <div class="row g-0">
+    <div class="col-md-16">
+      <div class="card-body">
+          <img src="https://api.tydiumcraft.net/skin?uuid=<%=session.xboxUser.uuid%>&type=avatar" class="img-fluid rounded-start img-shadow" alt="Bedrock Avatar">
+        <h5 class="card-title"><%=session.xboxUser.gamertag%></h5>
+        <button onclick="link('bedrock', this)" class="btn btn-primary" id="bedrockButton"><%=session.xboxUser.isLinked ? 'LINKED' : 'LINK' %></button>
+      </div>
+    </div>
+  </div>
+</div>
+                  <% } %>
+          </div>
+        </div>
+      </div>
+    </div>
+<div class="modal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Modal body text goes here.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+    <%~ includeFile('./includes/footer', {isAuthenticated: isAuthenticated}); %>
+
+      <!-- importing bootstrap.js and supporting js libraries -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.slim.min.js" integrity="sha512-6ORWJX/LrnSjBzwefdNUyLCMTIsGoNP6NftMy2UAm1JBm6PRZCO1d7OHBStWpVFZLO+RerTvqX/Z9mBFfCJZ4A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <script src="/link.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.10.2/umd/popper.min.js" integrity="sha512-nnzkI2u2Dy6HMnzMIkh7CPd1KX445z38XIu4jG1jGw7x5tSL3VBjE44dY4ihMU1ijAQV930SPM12cCFrB18sVw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/js/bootstrap.min.js" integrity="sha512-OvBgP9A2JBgiRad/mM36mkzXSXaJE9BEIENnVEmeZdITvwT09xnxLtT4twkCa8m/loMbPHsvPl0T8lRGVBwjlQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+
+</html>
