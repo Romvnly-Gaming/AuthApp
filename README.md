@@ -33,10 +33,14 @@ Discord's [oAuth2 system](https://discord.com/developers/docs/topics/oauth2) is 
 
 ## Setup
 
-Locate the root of the project folder (i.e. `TestApp`). Then:
+Locate the root of the project folder (i.e. `AuthApp`). Then:
 
 ```console
     npm install
+    cd TestApp
+    vim example.appSettings.json
+    mv example.appSettings.json appSettings.json
+    cd App
     vim example.ormconfig.js
     vim example.redisconfig.js
     mv example.ormconfig.js ormconfig.js
